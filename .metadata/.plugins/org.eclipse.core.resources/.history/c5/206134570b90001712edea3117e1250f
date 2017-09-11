@@ -1,0 +1,6 @@
+import scala.beans.BeanProperty;
+package com.tests
+
+class Employee (@BeanProperty val  firstName : String, var lastName : String)
+{
+}

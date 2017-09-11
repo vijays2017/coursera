@@ -1,0 +1,17 @@
+package com.tests
+
+import akka.actor.Actor
+
+object BlockingIO extends App {
+  
+  class Test1 extends Actor {
+    
+    def receive = {
+      case str : String => 
+        Thread.sleep(1000)
+        sender() ! str.toLowerCase()
+      
+    }
+    
+  }
+}

@@ -1,0 +1,14 @@
+package com.tests
+
+import akka.actor.Actor
+
+object BlockingIO extends App {
+  
+  class Test1 extends Actor {
+    
+    def receive = {
+      
+    }
+    
+  }
+}

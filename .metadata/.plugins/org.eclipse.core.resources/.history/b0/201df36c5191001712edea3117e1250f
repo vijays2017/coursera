@@ -1,0 +1,14 @@
+package com.tests
+
+object MessagePassingOveerThread extends App {
+  
+  val message1 = "Hello World"
+  
+  val message2 = "helloWorld" 
+  
+  class  Test (obj : String) extends Thread {
+    
+  }
+  
+  
+}

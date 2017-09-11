@@ -1,0 +1,12 @@
+package com.tests
+
+object CoupleScript extends App {
+  
+  val couple = Couple (10, "Scala")
+  
+  val couple2 : Couple [Int, String] = Couple (10, "Scala")
+  
+  val couple3 : Couple [String, String] = Couple ("Hello", "Scala")
+  
+  println (couple3)
+}

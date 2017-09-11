@@ -1,0 +1,18 @@
+package com.tests
+
+object ThreadSafety extends App {
+  
+  var domain : String = "" // static variable, shared
+  
+  def setDomain (input : String ) ={
+    
+    domain = input.toLowerCase();
+    
+    domain = domain.split("@")(1)
+  }
+  
+  def getDomain = domain
+  
+  setDomain ("foo@bar.com")
+  
+}

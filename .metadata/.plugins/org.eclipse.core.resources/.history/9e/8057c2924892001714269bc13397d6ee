@@ -1,0 +1,17 @@
+package com.tests
+
+import akka.actor.Actor
+
+object SingleProducer extends App {
+  
+  val list = List ("foo", "bar", "sha", "baz")
+  
+  
+  class StringPersister extends Actor
+  {
+    
+    
+  }
+  
+  
+}

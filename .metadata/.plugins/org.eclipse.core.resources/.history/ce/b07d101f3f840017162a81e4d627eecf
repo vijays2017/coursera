@@ -1,0 +1,9 @@
+
+
+object TestApp extends App {
+  
+  println ("Hello!")
+  
+  case class Book (title : String, authors : String* ) 
+
+}

@@ -1,0 +1,41 @@
+package com.tests
+import scala.beans.BeanProperty;
+
+abstract class Person {
+  def firstName : String
+  def lastName : String
+  
+}
+
+class Employee (@BeanProperty val  firstName : String, @BeanProperty var lastName : String, 
+                        title : String) extends Person
+  {
+  
+  require (firstName.isEmpty() , "First name is required ")
+  require (lastName.isEmpty() , "last name is required ")
+  require (title.isEmpty() , "title is required ")
+
+  
+  def this (firstName : String,   lastName : String ) = this (firstName, lastName, "Programmer")
+
+  def fullName = s"$firstName $lastName"
+  
+  def copy (firstName : String = this.firstName, 
+                            lastName : String = this.lastName, 
+                            title : String = this.title ) = new Employee (firstName, lastName, title)
+                                          
+  }
+
+
+class Department (val name : String )
+
+class Manager (firstName : String , lastName : String , title : String,  val department : Department) 
+        extends Employee (firstName , lastName, title){
+  
+  
+  override def fullName = s"$firstName $lastName ${department.name} Manager" 
+  
+  override def copy (firstName : String = this.firstName, 
+                            lastName : String = this.lastName, 
+                            title : String = this.title ) = new Employee (firstName, lastName, title)
+}

@@ -1,0 +1,31 @@
+package com.tests
+
+import akka.actor.Actor
+import akka.actor.ActorSystem
+
+object SingleProducer extends App {
+  
+  val list = List ("foo", "bar", "sha", "baz")
+  
+  val actorSystem = ActorSystem ("Test-System")
+  
+  val persister = actorSystem.actorOf(Props[StringPersister])
+  
+  class StringPersister extends Actor
+  {
+    
+    def receive = {
+      case str : String => println (str)
+    }
+    
+  }
+  
+   class StringToUpper extends Actor
+  {
+    
+    def receive = {
+      case 'GO : String => list foreach (
+    }
+    
+  }
+}

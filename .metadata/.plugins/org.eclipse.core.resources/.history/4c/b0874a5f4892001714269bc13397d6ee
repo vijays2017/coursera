@@ -1,0 +1,5 @@
+package com.tests
+
+object SingleProducer extends App {
+  
+}

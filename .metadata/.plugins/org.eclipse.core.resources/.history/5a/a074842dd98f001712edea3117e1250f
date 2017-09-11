@@ -1,0 +1,10 @@
+package com.tests
+
+object ForEach extends App {
+  
+  val list : [Int] = List (1,2,3,4,5)
+  
+  //println (
+  
+  
+}

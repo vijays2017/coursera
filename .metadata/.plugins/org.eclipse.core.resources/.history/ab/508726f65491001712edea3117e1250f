@@ -1,0 +1,32 @@
+package com.tests
+
+object MessagePassingOveerThread extends App {
+  
+  val message1 = "Hello World"
+  
+  val message2 = "helloWorld" 
+  
+  class  Test (obj : String) extends Thread {
+    
+    override def run() : Unit = {
+      
+      Thread.sleep(1000)
+      println (s"${Thread.currentThread().getName} - ${obj.toLowerCase()}") 
+    }
+    
+  }
+  
+  def threadInvocations () = {
+    
+    val thread1 = new Test (message1)
+    val thread2 = new Test (message2)
+    
+    thread1.start()
+    
+    thread2.start()
+  }
+  
+  println ("hello")
+  threadInvocations()
+  
+}

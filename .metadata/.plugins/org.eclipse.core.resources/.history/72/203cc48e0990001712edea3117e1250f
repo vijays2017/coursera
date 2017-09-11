@@ -1,0 +1,3 @@
+package com.tests
+
+class Employee (firstName : String, lastName : String)

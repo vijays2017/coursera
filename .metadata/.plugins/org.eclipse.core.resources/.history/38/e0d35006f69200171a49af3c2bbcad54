@@ -1,0 +1,9 @@
+package com.tests
+
+object BlockingIO extends App {
+  
+  class Test1 extends Actor {
+    
+    
+  }
+}

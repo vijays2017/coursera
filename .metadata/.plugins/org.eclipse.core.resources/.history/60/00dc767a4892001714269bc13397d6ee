@@ -1,0 +1,8 @@
+package com.tests
+
+object SingleProducer extends App {
+  
+  val list = List ("foo", "bar", "sha", "baz")
+  
+  
+}

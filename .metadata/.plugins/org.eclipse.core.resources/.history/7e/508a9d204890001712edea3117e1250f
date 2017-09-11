@@ -1,0 +1,10 @@
+package com.tests
+import scala.beans.BeanProperty;
+import sun.security.krb5.internal.LastReq
+
+class Employee (@BeanProperty val  firstName : String, @BeanProperty var lastName : String, 
+                        title : String)
+  {
+  def this (firstName : String,   lastName : String ) = this (firstName, lastName, "Programmer")
+
+  }

@@ -1,0 +1,15 @@
+package com.tests
+import scala.beans.BeanProperty;
+
+class Employee (@BeanProperty val  firstName : String, @BeanProperty var lastName : String, 
+                        title : String)
+  {
+  def this (firstName : String,   lastName : String ) = this (firstName, lastName, "Programmer")
+
+  }
+
+
+class Department (val name : String )
+
+class Manager (firstName : String , lastName : String , title : String,  val department : Department) 
+        extends Employee (firstName , lastName, title)

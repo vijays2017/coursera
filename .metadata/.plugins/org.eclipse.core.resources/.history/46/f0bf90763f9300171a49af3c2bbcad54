@@ -1,0 +1,27 @@
+package com.tests
+
+import akka.actor.Actor
+import akka.actor.ActorSystem
+import akka.actor.Props
+import akka.util.Timeout
+
+object BlockingIO extends App {
+  
+  class Test1 extends Actor {
+    
+    def receive = {
+      case str : String => 
+        Thread.sleep(1000)
+        sender() ! str.toLowerCase()
+      
+    }
+    
+  }
+  
+  def blockingOnMainThreadPool () = {
+    
+    val  system = ActorSystem("Test-Actors")
+    val actor1 = system.actorOf(Props[Test1])
+    implicit val timeout = Timeout (5)
+  }
+}

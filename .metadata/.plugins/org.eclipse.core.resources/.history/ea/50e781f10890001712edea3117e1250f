@@ -1,0 +1,8 @@
+package com.tests
+
+object EmployeeScript extends App {
+  
+  val e = new Employee ("Vijay", "Srivastava")
+  
+  println (e.firstName)
+}
